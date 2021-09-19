@@ -1,40 +1,40 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Dispatch, RootState } from "./models";
 import "./App.css";
 
 const numberFormat = (num: number, digit: number = 2) => {
-  let res = String(num);
+    let res = String(num);
 
-  while (res.length < digit) {
-    res = "0" + res;
-  }
+    while (res.length < digit) {
+        res = "0" + res;
+    }
 
-  return res;
+    return res;
 };
 
 function App() {
-  const [time, setTime] = useState(new Date());
+    const { hour, minute, second } = useSelector(
+        (rootState: RootState) => rootState.time
+    );
+    const dispatch = useDispatch<Dispatch>();
 
-  useEffect(() => {
-    let t: number = -1;
-    const updateTime = () => {
-      setTime(new Date());
-      t = setTimeout(() => updateTime(), 1000);
-    };
-    updateTime();
-    return () => clearTimeout(t);
-  }, []);
+    useEffect(() => {
+        dispatch.time.startUpdatingTime();
+        return () => dispatch.time.endUpdateTime();
+    }, []);
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <div className="App-time-container">
-          {[time.getHours(), time.getMinutes(), time.getSeconds()]
-            .map((value) => numberFormat(value, 2))
-            .join(":")}
+    return (
+        <div className="App">
+            <header className="App-header">
+                <div className="App-time-container">
+                    {[hour, minute, second]
+                        .map((value) => numberFormat(value, 2))
+                        .join(":")}
+                </div>
+            </header>
         </div>
-      </header>
-    </div>
-  );
+    );
 }
 
 export default App;

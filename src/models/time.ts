@@ -23,7 +23,7 @@ let timer: number | undefined;
 export const time = createModel<RootModel>()({
     state: getTime(),
     reducers: {
-        updateTime(state: TimeState, { hour, minute, second, millisecond }) {
+        updateTime(state: TimeState, { hour, minute, second, millisecond }: Partial<TimeState>) {
             if (hour) {
                 state.hour = hour;
             }
