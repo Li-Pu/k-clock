@@ -7,8 +7,12 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@rematch/core": "^2.1.0",
+    "@rematch/immer": "^2.1.0",
+    "immer": "^9.0.6",
     "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "react-dom": "^17.0.0",
+    "react-redux": "^7.2.5"
   },
   "devDependencies": {
     "@types/react": "^17.0.0",
