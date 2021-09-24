@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Dispatch, RootState } from "./models";
+import React from "react";
 import "./App.css";
+import { useTime } from "./hooks";
 
 const numberFormat = (num: number, digit: number = 2) => {
     let res = String(num);
@@ -14,15 +13,7 @@ const numberFormat = (num: number, digit: number = 2) => {
 };
 
 function App() {
-    const { hour, minute, second } = useSelector(
-        (rootState: RootState) => rootState.time
-    );
-    const dispatch = useDispatch<Dispatch>();
-
-    useEffect(() => {
-        dispatch.time.startUpdatingTime();
-        return () => dispatch.time.endUpdateTime();
-    }, []);
+    const { hour, minute, second } = useTime();
 
     return (
         <div className="App">
