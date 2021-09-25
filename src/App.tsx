@@ -1,12 +1,11 @@
 import React from "react";
-import "./App.css";
 import { DialSelect } from "./views";
 
 function App() {
     return (
-        <div className="App">
-            <header className="App-header">
-                <DialSelect />
+        <div className="align-center">
+            <header className="h-screen flex flex-col items-stretch bg-gray-900 bg-opacity-100">
+                <DialSelect className="flex-auto" />
             </header>
         </div>
     );
