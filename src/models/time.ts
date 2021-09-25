@@ -24,16 +24,16 @@ export const time = createModel<RootModel>()({
     state: getTime(),
     reducers: {
         updateTime(state: TimeState, { hour, minute, second, millisecond }: Partial<TimeState>) {
-            if (hour) {
+            if (typeof hour === 'number' && hour !== state.hour) {
                 state.hour = hour;
             }
-            if (minute) {
+            if (typeof minute === 'number' && minute !== state.minute) {
                 state.minute = minute;
             }
-            if (second) {
+            if (typeof second === 'number' && second !== state.second) {
                 state.second = second;
             }
-            if (millisecond) {
+            if (typeof millisecond === 'number' && millisecond !== state.millisecond) {
                 state.millisecond = millisecond;
             }
             return state
