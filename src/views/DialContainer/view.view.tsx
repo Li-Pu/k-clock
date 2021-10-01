@@ -5,10 +5,10 @@ import { useTime } from "../../hooks";
 import { DialContainerProps } from "./type";
 
 const DialContainer: FC<DialContainerProps> = (props: DialContainerProps) => {
-    const { className, DialElement = BasicElement } = props;
+    const { className, DialElement = BasicElement, onClick } = props;
     const time = useTime();
     return (
-        <div className={classnames(className, "flex flex-stretch")}>
+        <div className={classnames(className, "flex flex-stretch")} onClick={onClick}>
             <DialElement className="flex-1" {...time} />
         </div>
     );
