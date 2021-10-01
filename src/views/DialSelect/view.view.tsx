@@ -1,12 +1,11 @@
 import classnames from "classnames";
 import React, { FC, useState, useCallback, useMemo } from "react";
 import DialContainer from "../DialContainer";
-import { BasicElement } from "../../components/Dials";
+import dials, { BasicElement } from "../../components/Dials";
 import { DialSelectProps } from "./type";
 
 const DialSelect: FC<DialSelectProps> = (props: DialSelectProps) => {
     const { className } = props;
-    const [dials, setDials] = useState([BasicElement]);
     const [dialIndex, setDialIndex] = useState(0);
     const [selecting, setSelecting] = useState(false);
 
@@ -16,11 +15,11 @@ const DialSelect: FC<DialSelectProps> = (props: DialSelectProps) => {
 
     const set2PrevDial = useCallback(() => {
         setDialIndex((dialIndex + dials.length - 1) % dials.length);
-    }, [dials]);
+    }, [dials, dialIndex]);
 
     const set2NextDial = useCallback(() => {
         setDialIndex((dialIndex + 1) % dials.length);
-    }, [dials]);
+    }, [dials, dialIndex]);
 
     const currentDial = useMemo(() => {
         return dials[dialIndex];
