@@ -1,0 +1,43 @@
+@font-face {
+    font-family: "iconfont"; /* Project id 2846685 */
+    src: url("//at.alicdn.com/t/font_2846685_ztq8ghobzmq.eot?t=1633081905503"); /* IE9 */
+    src: url("//at.alicdn.com/t/font_2846685_ztq8ghobzmq.eot?t=1633081905503#iefix")
+            format("embedded-opentype"),
+        /* IE6-IE8 */
+            url("//at.alicdn.com/t/font_2846685_ztq8ghobzmq.woff2?t=1633081905503")
+            format("woff2"),
+        url("//at.alicdn.com/t/font_2846685_ztq8ghobzmq.woff?t=1633081905503")
+            format("woff"),
+        url("//at.alicdn.com/t/font_2846685_ztq8ghobzmq.ttf?t=1633081905503")
+            format("truetype"),
+        url("//at.alicdn.com/t/font_2846685_ztq8ghobzmq.svg?t=1633081905503#iconfont")
+            format("svg");
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-fangda:before {
+    content: "\e60e";
+}
+
+.icon-suoxiao:before {
+    content: "\e619";
+}
+
+.icon-shezhi:before {
+    content: "\e617";
+}
+
+.icon-you:before {
+    content: "\e621";
+}
+
+.icon-zuo:before {
+    content: "\e622";
+}
